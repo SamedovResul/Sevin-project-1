@@ -27,7 +27,6 @@ html {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  z-index: 10;
 }
 
 
@@ -42,9 +41,10 @@ html {
 
 .logo p {
   color: white;
-  /* font-weight: 700; */
   font-size: 35px;
   font-family: 'Savoye LET Plain';
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 .nav-box {
@@ -53,7 +53,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
 }
+
+
 
 .nav-box ul {
   list-style: none;
@@ -81,6 +84,78 @@ html {
 .nav-box a {
   text-decoration: none !important;
 }
+
+/*  open side menu  */
+
+.open-burger {
+  display: none;
+}
+
+.close-burger {
+  border: none;
+  background-color: unset;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+@media(max-width:768px) {
+
+  .nav-box ul {
+    display: none;
+  }
+
+  .open-burger {
+    display: block;
+    border: none;
+    background-color: unset;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0px 0px 0px auto;
+  }
+}
+
+
+/* side nav */
+
+.side-container {
+  width: 40%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: antiquewhite;
+  display: none;
+}
+
+@media(max-width:768px) {
+  .side-container {
+    display: block;
+  }
+}
+
+.side-container ul {
+  margin: 30px auto auto 10px;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.side-container li {
+  margin: auto 15px auto 15px;
+  font-weight: inherit;
+  color: black !important;
+  font-family: 'mySecondFont';
+  font-size: 25px;
+}
+
+
+.side-container a {
+  border-left: none !important;
+  text-decoration: none !important;
+}
+
 
 /* header-container */
 
@@ -183,7 +258,7 @@ html {
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 10%;
+  top: 15%;
   width: 60%;
   height: auto;
   background: rgb(197, 193, 193);
@@ -260,7 +335,7 @@ html {
   }
 
   .invition-container {
-    top: 5%;
+    top: 12%;
     width: 80%;
     height: auto;
   }
