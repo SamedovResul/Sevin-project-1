@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import {useSpring, animated} from 'react-spring'
 
 const Navbar = () =>{
-
+  const [style, setStyle] = useState({color: 'white'});
+  const [navstyle, setNavstyle] = useState(false);
+  const [border, setBorder] = useState({borderLeft: "1px solid white", })
   const [open, setOpen] = useState(false)
+
   const handlerBurger = function(){
     if(!open){
       setOpen(true)
@@ -26,29 +29,40 @@ const Navbar = () =>{
     document.getElementsByClassName("sticky")[0].style.display = "block";
   }, [])
 
-  const [style, setStyle] = useState({color: 'white'});
-  const [navstyle, setNavstyle] = useState({background: ''});
-  const [border, setBorder] = useState({borderLeft: "1px solid white", })
+
+  // let navAnimation 
+
+  
   useEffect(() => {
     const handlerChange = () =>{
       if(window.scrollY > 30){
-        setStyle({color: 'black'})
-        setNavstyle({background: 'white'})
-        setBorder({ borderLeft: "1px solid black" })
+        setNavstyle(true)
       }else if(window.scrollY < 10){
         setStyle({color: 'white'})
-        setNavstyle({background: ''})
+        setNavstyle(false)
         setBorder({ borderLeft: "1px solid white" })
       }
     }
     document.addEventListener('scroll', handlerChange)
   }, [])
+    const  navAnimation = useSpring({
+      to: [{
+        background: navstyle ? 'rgba(0, 0, 0, 2.452)' 
+        :'rgba(0, 0, 0, -1.548)' }],
+      from: {
+      background: 'rgba(0, 0, 0, -1.548)'
+      },
+      config: {
+				duration: 500
+			}
+    })
+
 
   
     
   return(
     <article className='sticky'>
-      <div style={navstyle} className="nav-container">
+      <animated.div style={navAnimation}  className="nav-container">
         <div className="logo">
           <p style={style} >Sevin</p>
         </div>
@@ -79,7 +93,7 @@ const Navbar = () =>{
               <p>&#9776;</p>
             </button>
         </div>
-      </div>
+      </ animated.div>
 
       <animated.div style={sideBar} className="side-container" >
           <button className="close-burger" onClick={handlerBurger} >

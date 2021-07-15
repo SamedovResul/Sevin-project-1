@@ -6,6 +6,7 @@ html {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  z-index: 5;
 }
 
 @font-face {
@@ -27,13 +28,13 @@ html {
   display: flex;
   justify-content: space-between;
   position: absolute;
+  /* background-color: rgba(255, 255, 255, 0.116) ; */
 }
 
 
 .logo {
   width: 100px;
   height: 100%;
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +76,7 @@ html {
 
 .nav-box li:hover {
   border-bottom: 1px solid rgb(187, 184, 184);
+  color: rgba(0, 0, 0, 0.452);
 }
 
 .nav-box ul a:nth-child(1) {
@@ -83,6 +85,7 @@ html {
 
 .nav-box a {
   text-decoration: none !important;
+  line-height: 0.8;
 }
 
 /*  open side menu  */
@@ -98,6 +101,7 @@ html {
   height: 40px;
   font-size: 25px;
   font-weight: 800;
+  color: white;
 }
 
 @media(max-width:768px) {
@@ -115,6 +119,7 @@ html {
     font-size: 25px;
     font-weight: 800;
     margin: 0px 0px 0px auto;
+    color: white;
   }
 }
 
@@ -126,7 +131,7 @@ html {
   height: 100%;
   position: fixed;
   top: 0px;
-  background-color: antiquewhite;
+  background-color: black;
   display: none;
 }
 
@@ -145,7 +150,7 @@ html {
 .side-container li {
   margin: auto 15px auto 15px;
   font-weight: inherit;
-  color: black !important;
+  color: white !important;
   font-family: 'mySecondFont';
   font-size: 25px;
 }
@@ -160,15 +165,33 @@ html {
 /* header-container */
 
 .header-container {
+  background-color: rgba(29, 24, 24, 0.39);
+  background-image: url('../src/image/bgimage.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
   width: 100%;
-  background-color: rgba(29, 24, 24, 0.39);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header-container::after {
+  background-color: rgba(29, 24, 24, 0.39);
+  content: '';
+  display: block;
+  height: 400px;
+  position: absolute;
+  /* z-index: -1; */
+  width: 100%;
+}
+
+.header-container img {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  z-index: -1;
 }
 
 .Sevin {
@@ -179,7 +202,10 @@ html {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.39);
+  z-index: 2
 }
+
+
 
 .Sevin p {
   font-size: 155px;
@@ -189,13 +215,19 @@ html {
   margin-block-end: 0em;
 }
 
+@media(max-width:567px) {
+  .Sevin p {
+    font-size: 125px;
+  }
 
-.header-container img {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  z-index: -1;
+  .Sevin {
+    width: 180px;
+    height: 180px;
+  }
 }
+
+
+
 
 /* invition-box  */
 

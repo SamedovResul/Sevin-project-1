@@ -40,7 +40,7 @@ const Main = () =>{
   return(
     <article>
       <div className="header-container">
-        <img src={bgphoto} alt="" />
+        {/* <img src={bgphoto} alt="" /> */}
         <div className='Sevin'>
           <p>S</p>
         </div>
