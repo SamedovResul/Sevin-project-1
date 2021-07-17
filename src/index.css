@@ -290,11 +290,14 @@ html {
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 15%;
+  top: 18%;
   width: 60%;
   height: auto;
   background: rgb(197, 193, 193);
+  z-index: 4;
 }
+
+
 
 .close {
   border: none !important;
@@ -367,7 +370,7 @@ html {
   }
 
   .invition-container {
-    top: 12%;
+    top: 10%;
     width: 80%;
     height: auto;
   }
@@ -448,6 +451,8 @@ html {
 }
 
 @media(max-width:400px) {
+
+
   .img-box img {
     width: 60%;
   }
@@ -471,6 +476,12 @@ html {
   }
 }
 
+
+@media(max-width:320px) {
+  .invition-container {
+    top: 7%;
+  }
+}
 
 
 /* About */
@@ -501,7 +512,7 @@ html {
 
 .footer-container {
   height: 200px;
-  background-color: blue;
+  background-color: black;
 }
 
 .contact ul {

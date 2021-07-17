@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const  Invition = (props) =>{
 
-  const {image, name,description } = props.data
-  console.log(props.data)
+  const {image, name,description, url } = props.data
+  console.log(url)
   return( 
     <>
      <div  className="invition-container-box">
@@ -14,9 +14,11 @@ const  Invition = (props) =>{
         <div className="text-box">  
           <h2>{name}</h2>
           <p>{description}</p>
-          <Link to='/invitation' >
-            <button className='btn' > Nümunə </button>
-          </Link>
+          
+            <button className='btn'
+              onClick={() => window.open(url)}
+             > Nümunə </button>
+          
         </div>
           
       </div>

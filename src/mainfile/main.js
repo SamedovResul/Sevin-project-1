@@ -4,24 +4,28 @@ import Invition from '../data'
 import InvitionPAges from '../invitionfile/invition-pages'
 import InvitionPage from '../invitionfile/invition-page'
 import Footer from '../footerfile/footer'
-import bgphoto from '../image/bgimage.png'
+import disableScroll from 'disable-scroll';
 
 const Main = () =>{
   const [box, setBox] = useState('close') 
   const [id, setId] = useState('')
   const selected = Invition.find(element => element.id ===  id)
-
+  
   console.log(id)
   const handlerChange = function(e){
 		if(box === 'close'){
 			setBox('open')
 		}else{
 			setBox('close')
+      disableScroll.off()
 		}
 	}
+
+  
   useEffect(() => {
     if(id){
       setBox('open')
+      disableScroll.on()
     }
     
   }, [id])
@@ -39,13 +43,12 @@ const Main = () =>{
 
   return(
     <article>
-      <div className="header-container">
-        {/* <img src={bgphoto} alt="" /> */}
+      <div className="header-container test ">
         <div className='Sevin'>
           <p>S</p>
         </div>
       </div>
-      <div className="container">
+      <div className="container test">
         <div className="constainer-fluid">
           <div className="row ">
             
@@ -57,7 +60,7 @@ const Main = () =>{
             onClick={() => setId(subject.id)} 
             className="col-md-3 col-sm-4   invition-box"
             >
-              <div className="test">
+              <div className="">
                 <InvitionPAges  data={subject} />
               </div>
             </div>
