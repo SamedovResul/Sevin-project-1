@@ -84,7 +84,7 @@ const Navbar = () =>{
 
               <Link style={border} to='/'>
                 <li style={style} >
-                  Invitions
+                  Invitations
                 </li>
               </Link>
             
