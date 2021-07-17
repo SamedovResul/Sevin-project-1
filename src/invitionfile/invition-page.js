@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const  Invition = (props) =>{
 
   const {image, name,description, url } = props.data
-  console.log(url)
   return( 
     <>
      <div  className="invition-container-box">

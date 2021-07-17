@@ -4,6 +4,7 @@ import Invition from '../data'
 import InvitionPAges from '../invitionfile/invition-pages'
 import InvitionPage from '../invitionfile/invition-page'
 import Footer from '../footerfile/footer'
+import S from '../image/sevinwhiteS.png'
 import disableScroll from 'disable-scroll';
 
 const Main = () =>{
@@ -45,7 +46,7 @@ const Main = () =>{
     <article>
       <div className="header-container test ">
         <div className='Sevin'>
-          <p>S</p>
+          <img src={S} alt="" />
         </div>
       </div>
       <div className="container test">
@@ -61,7 +62,7 @@ const Main = () =>{
             className="col-md-3 col-sm-4   invition-box"
             >
               <div className="">
-                <InvitionPAges  data={subject} />
+                <InvitionPAges  data={subject} handlerChange={handlerChange} />
               </div>
             </div>
               )
@@ -72,7 +73,7 @@ const Main = () =>{
       </div>
       <animated.div style={animationbox}  className="invition-container">
             { selected ? ( 
-              <InvitionPage data={selected} />
+              <InvitionPage data={selected}  />
             ) : ( <p>there is error</p> )}
         <button onClick={handlerChange} type="button" className="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>

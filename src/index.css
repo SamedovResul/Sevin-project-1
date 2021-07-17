@@ -207,17 +207,20 @@ html {
 
 
 
-.Sevin p {
-  font-size: 155px;
-  color: white;
-  font-family: 'Savoye LET Plain';
-  margin-block-start: 0em;
-  margin-block-end: 0em;
+.Sevin img {
+  width: 10%;
+  height: auto;
+}
+
+@media(max-width:768px) {
+  .Sevin img {
+    width: 15%;
+  }
 }
 
 @media(max-width:567px) {
-  .Sevin p {
-    font-size: 125px;
+  .Sevin img {
+    width: 20%;
   }
 
   .Sevin {
@@ -232,14 +235,19 @@ html {
 /* invition-box  */
 
 .invition-box {
-  height: 300px;
+  height: 400px;
   margin-top: 20px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.invition-box>div {
+  height: 360px;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 
@@ -251,9 +259,8 @@ html {
 }
 
 .img-box img {
-  width: 60%;
+  width: 80%;
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 
@@ -264,24 +271,104 @@ html {
   text-align: center;
 }
 
+.text-box button {
+  width: 30%;
+  height: 40%;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
 .text-box p {
   font-family: 'mySecondFont';
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 800;
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 
-@media(max-width: 768px) {
+@media(max-width:1199px) {
   .invition-box {
-    height: 300px;
+    height: 350px;
+  }
+
+  .invition-box>div {
+    height: 320px;
+    width: 90%;
+  }
+}
+
+@media(max-width:991px) {
+  .invition-box {
+    height: 280px;
+  }
+
+  .invition-box>div {
+    height: 260px;
+    width: 90%;
+  }
+}
+
+@media(max-width: 768px) {
+  .text-box button {
+    width: 40%;
   }
 }
 
 @media(max-width:576px) {
+  .invition-box {
+    height: 360px;
+  }
+
+  .invition-box>div {
+    height: 340px;
+  }
+
+  .invition-box .img-box img {
+    width: 35%;
+  }
+
+  .text-box button {
+    width: 20%;
+  }
+}
+
+@media(max-width:500px) {
+  .invition-box {
+    height: 340px;
+  }
+
+  .invition-box>div {
+    height: 320px;
+  }
+
+
+
   .invition-box .img-box img {
     width: 35%;
   }
 }
+
+@media(max-width:400px) {
+  .invition-box {
+    height: 270px;
+  }
+
+  .invition-box>div {
+    height: 260px;
+  }
+
+
+
+  .invition-box .img-box img {
+    width: 35%;
+  }
+}
+
+
+
+
+
 
 /* invition-container  */
 
@@ -320,8 +407,13 @@ html {
   height: auto;
   display: flex;
   justify-content: center;
-
 }
+
+.invition-container .img-box img {
+  width: 70%;
+  height: auto;
+}
+
 
 
 .invition-container .text-box {

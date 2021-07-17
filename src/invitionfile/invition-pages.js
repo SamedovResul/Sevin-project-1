@@ -1,7 +1,5 @@
 import {React} from 'react'
 const Invitions = (props) =>{
-  // console.log(props)
-  
   const {image, name,} = props.data
   return(
       <>
@@ -10,6 +8,7 @@ const Invitions = (props) =>{
         </div>
         <div className="text-box">
           <p>{name}</p>
+          <button >Ətraflı</button>
         </div>
       </>
   )
